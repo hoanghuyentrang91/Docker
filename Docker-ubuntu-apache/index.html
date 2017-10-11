@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kara's Shop</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101471998-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body id="myPage">
+
+<!-- Sidebar on click (Xem thêm)"-->
+<nav class="w3-sidebar w3-bar-block w3-theme-l5 w3-card-2 w3-animate-left" style="display:none;z-index:2" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Đóng
+    <i class="fa fa-remove"></i>
+  </a>
+  <a href="http://www.thefaceshop.com/mall/event/event.jsp" target="_blank" class="w3-bar-item w3-button w3-teal w3-border">Thefaceshop Event</a>
+  <a href="http://www.seantree.co.kr/event/event_ing.aspx" target="_blank" class="w3-bar-item w3-button w3-teal w3-border">SeaNtree Event</a>
+  <a href="http://theyeon.kr/product/list.html?cate_no=50" target="_blank" class="w3-bar-item w3-button w3-teal w3-border">The Yeon Event</a>
+  <a href="http://www.banilaco.co.kr/event/ongoingEventList.do" target="_blank" class="w3-bar-item w3-button w3-teal w3-border">Banila Co. Event</a>
+  <a href="http://www.cliocosmetic.com/ko/event/list.asp" target="_blank" class="w3-bar-item w3-button w3-teal w3-border">Clio Event</a>
+  <a href="http://www.eglips.com/shop/page.html?id=4" target="_blank" class="w3-bar-item w3-button w3-teal w3-border">Eglips Event</a>
+  <a href="http://www.jsoop.co.kr/board/gallery2/list.html?board_no=13" target="_blank" class="w3-bar-item w3-button w3-teal w3-border">Jsoop Event</a>  
+</nav>
+
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d3 w3-left-align">
+  <a class="w3-bar-item w3-button w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-black w3-hover-white"><i class="fa fa-home w3-margin-right"></i>Kara's Shop</a>
+  <a href="#cosmetic" class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-hover-white">Mỹ phẩm Hàn</a>
+  <a href="#sale" class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-hover-white">SALE !!!</a>
+  <div class="w3-dropdown-hover w3-hide-medium w3-hide-small">
+    <button href="#others" class="w3-button w3-hover-white">Sản phẩm khác <i class="fa fa-caret-down"></i></button>     
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+      <a href="#others" class="w3-bar-item w3-button w3-theme-d3 w3-hover-white">Sâm Nonghyup</a>
+      <a href="#others" class="w3-bar-item w3-button w3-theme-d3 w3-hover-white">Dầu nóng Hàn Quốc</a>
+      <a href="#others" class="w3-bar-item w3-button w3-theme-d3 w3-hover-white">Sữa Hàn Quốc</a>
+    </div>
+  </div>
+  <a href="#contact" class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-hover-white">Thông tin thanh toán</a>
+  <a href="#address" class="w3-bar-item w3-button w3-hide-medium w3-hide-small w3-hover-white">Liên hệ</a>
+  <div class="w3-dropdown-hover w3-hide-medium w3-hide-small w3-right" title="Google Translate" id="translate"></div>
+ </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large">
+    <a href="#cosmetic" class="w3-bar-item w3-button">Mỹ phẩm Hàn</a>
+	<a href="#sale" class="w3-bar-item w3-button">SALE !!!</a>
+    <a href="#others" class="w3-bar-item w3-button">Sản phẩm khác</a>
+    <a href="#contact" class="w3-bar-item w3-button">Thông tin thanh toán</a>
+    <a href="#address" class="w3-bar-item w3-button">Liên hệ</a>
+  </div>
+</div>
+
+
+<!-- Image Header -->
+<div class="w3-display-container w3-animate-opacity w3-theme">
+  <img class="w3-image w3-center" src="shopLogo.jpg" alt="Kara's Shop" style="width:100%;min-height:600px;max-height:700px;">
+  <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
+    <button onclick="document.getElementById('greeting').style.display='block'" class="w3-button w3-theme-d2 w3-hover-white" title="Kara's Shop">Lần đầu ghé thăm Kara's Shop? <br> Vui lòng đọc thông tin tại đây!</button>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div id="greeting" class="w3-modal">
+  <div class="w3-modal-content w3-card-4 w3-animate-top">
+    <header class="w3-container w3-teal w3-display-container"> 
+      <span onclick="document.getElementById('greeting').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+      <h4>Cảm ơn bạn đã ghé thăm Kara's Shop <i class="fa fa-heart"></i></h4>
+	  <h5>Trang web của chúng tôi đang trong giai đoạn hoàn thiện. Một vài tính năng sẽ sớm được cập nhật.</h5>
+      <h5>Mong bạn thông cảm và vui lòng liên hệ qua Facebook hoặc <a href="index.html#message">gửi tin nhắn</a> cho chúng tôi nếu có thắc mắc. Thank you ^^</h5>
+    </header>
+    <div class="w3-container">
+		<p><i class="fa fa-facebook w3-text-teal w3-xlarge"></i> <a href="https://www.facebook.com/karashop25"  target="_blank"> www.facebook.com/karashop25</a></p>
+		<p><i class="fa fa-twitch w3-text-teal w3-xlarge"></i><a href="https://www.messenger.com/t/karashop25"  target="_blank"> www.messenger.com/t/karashop25</a></p>
+    </div>
+    <footer class="w3-container w3-teal">
+      <p>Chúc một ngày tốt lành - Kara's Shop <i class="fa fa-heart"></i></p>
+    </footer>
+  </div>
+</div>
+
+
+<!-- Mỹ phẩm Hàn (#cosmetic) Container -->
+<div class="w3-container w3-padding-64 w3-center w3-theme-l5" id="cosmetic">
+<h2>Mỹ phẩm Hàn</h2>
+<p class="w3-hide-small">Amore Pacific, Sulwhasoo, Hera, Hanyul, 
+  Whoo, Ohui, Su:m37, Laneige, 
+  Innisfree, Etude House, Mamonde, 
+  Iope, 3CE, Missha, April Skin, Thefaceshop, 
+  Skinfood, Narute Republic, Klairs, Tony Moly,
+  Mise En Scene, Espoir, Ecole, Holika Holika, 
+  Secret Key, Peripera, G9Skin, Touch in Sol, 
+  Mizon, SeaNtree, The Yeon, Banila Co, Clio, Eglips, Jsoop, vv.</p>
+<div class="w3-row"><br>
+
+<div class="w3-col w3-container l3">
+  <img src="skincareLogo.jpg" alt="Chăm sóc da" class="w3-image w3-card-4 w3-hover-opacity">
+  <h3>Chăm sóc da</h3>
+  <div class="w3-container w3-hide-medium w3-hide-small">
+    <a href="skincare.html" target="_blank" class="w3-bar-item w3-button w3-teal">Đi tới cửa hàng</a>
+    <p class="w3-margin-right w3-margin-left"> Tẩy trang/Rửa mặt, Nước hoa hồng, Sữa dưỡng, Tinh chất dưỡng, 
+	   Dưỡng mắt, Kem dưỡng da,  Mặt nạ, Chống nắng, Chăm sóc cơ thể, vv.<br><br><br></p>
+  </div>
+  <div class="w3-container w3-hide-large w3-border-bottom w3-margin-bottom">
+    <a href="skincare.html" target="_blank" class="w3-bar-item w3-button w3-teal" style="width:100%">Đi tới cửa hàng</a>
+	<p></p>
+  </div>
+  
+</div>
+
+<div class="w3-col w3-container l3">
+  <img src="makeupLogo.jpg" alt="Trang điểm" class="w3-image w3-card-4 w3-hover-opacity">
+  <h3>Trang điểm</h3>
+  <div class="w3-container w3-hide-medium w3-hide-small">
+    <a href="makeup.html" target="_blank" class="w3-bar-item w3-button w3-teal">Đi tới cửa hàng</a>
+    <p class="w3-margin-right w3-margin-left"> CC Cushion, Kem lót, Kem nền, BB Cushion, Phấn bột/Phấn nén, 
+	   Che khuyết điểm/Highlight, Chì kẻ chân mày, Mascara, Kẻ mắt, Phấn mắt,
+	   Son bóng, Son dưỡng, Son tint, Chăm sóc môi, vv.<br><br><p>  
+  </div>
+  <div class="w3-container w3-hide-large w3-border-bottom w3-margin-bottom">
+    <a href="makeup.html" target="_blank" class="w3-bar-item w3-button w3-teal" style="width:100%">Đi tới cửa hàng</a>
+	<p></p>
+  </div>	
+</div>
+
+<div class="w3-col w3-container l3">
+  <img src="toolLogo.jpg" alt="Dụng cụ" class="w3-image w3-card-4 w3-hover-opacity">
+  <h3>Dụng cụ</h3>
+  <div class="w3-container w3-hide-medium w3-hide-small">
+    <a href="tool.html" target="_blank" class="w3-bar-item w3-button w3-teal">Đi tới cửa hàng</a>
+    <p class="w3-margin-right w3-margin-left">Các loại cọ trang điểm, 
+	   Bông mút trang điểm, Bấm mi, 
+       Dụng cụ làm móng, 
+       Chăm sóc cơ thể, vv.<br><br><br><br></p>   
+  </div>
+  <div class="w3-container w3-hide-large w3-border-bottom w3-margin-bottom">
+    <a href="tool.html" target="_blank" class="w3-bar-item w3-button w3-teal" style="width:100%">Đi tới cửa hàng</a>
+	<p></p>
+  </div>
+</div>
+
+<div class="w3-col w3-container l3">
+  <img src="formenLogo.jpg" alt="Dành cho nam" class="w3-image w3-card-4 w3-hover-opacity">
+  <h3>Dành cho nam</h3>
+  <div class="w3-container w3-hide-medium w3-hide-small">
+    <a href="formen.html" target="_blank" class="w3-bar-item w3-button w3-teal">Đi tới cửa hàng</a>
+    <p class="w3-margin-right w3-margin-left">Các sản phẩm chuyên biệt dành cho nam.</p>
+  </div>
+  <div class="w3-container w3-hide-large w3-border-bottom w3-margin-bottom">
+    <a href="formen.html" target="_blank" class="w3-bar-item w3-button w3-teal" style="width:100%">Đi tới cửa hàng</a>
+	<p></p>
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- Change the number of brand's events -->
+<!-- Sale Row -->
+<div class="w3-row-padding w3-padding-64 w3-theme " id="sale">
+
+<div class="w3-col w3-center w3-container m12 l3">
+<div class="w3-container">
+  <h2>SALE !!!</h2><br>
+</div>
+  <p>Đợt sale/event từ các nhãn hàng. Vui lòng click vào "Event" để xem thông tin chi tiết.<br></p>
+</div>
+
+
+<div class="w3-col w3-center w3-container m6 l3">
+<div class="w3-card-2 w3-white">
+  <!--img class="event" src="laneigeLogo.jpg" alt="Laneige"-->
+  <div class="w3-container">
+  <h3>Innisfree</h3>
+  <a href="http://www.innisfree.com/kr/ko/MainShopping.do" target="_blank" class="w3-bar-item w3-button w3-teal">Event</a>
+  <p></p>
+  </div>
+  <p></p>
+  </div>
+</div>
+
+
+<div class="w3-col w3-center w3-container m6 l3">
+<div class="w3-card-2 w3-white">
+  <!--img class="event" src="laneigeLogo.jpg" alt="Laneige"-->
+  <div class="w3-container">
+  <h3>Mamonde</h3>
+  <a href="http://www.mamonde.com/kr/ko/promotion/onlinepromotion/current.html" target="_blank" class="w3-bar-item w3-button w3-teal">Event</a>
+  <p></p>
+  </div>
+  <p></p>
+  </div>
+</div>
+
+
+<div class="w3-col w3-center w3-container m6 l3">
+<div class="w3-card-2 w3-white">
+  <!--img class="event" src="laneigeLogo.jpg" alt="Laneige"-->
+  <div class="w3-container">
+  <h3>Laneige</h3>
+  <a href="http://www.laneige.com/kr/ko/event-and-news/event/events.html" target="_blank" class="w3-bar-item w3-button w3-teal">Event</a>
+  <p></p>
+  </div>
+  <p></p>
+  </div>
+</div>
+
+
+<div class="w3-col w3-center w3-container m6 l3">
+<div class="w3-card-2 w3-white">
+  <!--img class="event" src="laneigeLogo.jpg" alt="Laneige"-->
+  <div class="w3-container">
+  <h3>Etude House</h3>
+  <a href="http://www.etude.co.kr/event.do?method=list" target="_blank" class="w3-bar-item w3-button w3-teal">Event</a>
+  <p></p>
+  </div>
+  <p></p>
+  </div>
+</div>
+
+
+<div class="w3-col w3-center w3-container m6 l3">
+<div class="w3-card-2 w3-white">
+  <!--img class="event" src="laneigeLogo.jpg" alt="Laneige"-->
+  <div class="w3-container">
+  <h3>Missha</h3>
+  <a href="http://missha.beautynet.co.kr/main.do" target="_blank" class="w3-bar-item w3-button w3-teal">Event</a>
+  <p></p>
+  </div>
+  <p></p>
+  </div>
+</div>
+
+
+<div class="w3-col w3-center w3-container m6 l3">
+<div class="w3-card-2 w3-white">
+  <!--img class="event" src="laneigeLogo.jpg" alt="Laneige"-->
+  <div class="w3-container">
+  <h3>April Skin</h3>
+  <a href="http://aprilskin.com/board/event/list.html?board_no=13" target="_blank" class="w3-bar-item w3-button w3-teal">Event</a>
+  <p></p>
+  </div>
+  <p></p>
+  </div>
+</div>
+
+
+<div class="w3-col w3-center w3-container m6 l3">
+<div class="w3-card-2 w3-white">
+  <!--img class="event" src="laneigeLogo.jpg" alt="Laneige"-->
+  <div class="w3-container">
+  <h3>Skinfood</h3>
+  <a href="http://www.theskinfood.co.kr/event/eventList.do" target="_blank" class="w3-bar-item w3-button w3-teal">Event</a>
+  <p></p>
+  </div>
+  <p></p>
+  </div>
+</div>
+
+
+<div class="w3-col w3-center w3-container m6 l3">
+<div class="w3-card-2 w3-white">
+  <!--img class="event" src="laneigeLogo.jpg" alt="Laneige"-->
+  <div class="w3-container">
+  <h3>Thefaceshop</h3>
+  <a href="http://www.thefaceshop.com/mall/event/event.jsp" target="_blank" class="w3-bar-item w3-button w3-teal">Event</a>
+  <p></p>
+  </div>
+  <p></p>
+  </div>
+</div>
+
+
+<div class="w3-col w3-center w3-container m6 l3">
+<div class="w3-card-2 w3-white">
+  <!--img class="event" src="laneigeLogo.jpg" alt="Laneige"-->
+  <div class="w3-container">
+  <h3>Narute Republic</h3>
+  <a href="http://www.naturerepublic.com/event/ing" target="_blank" class="w3-bar-item w3-button w3-teal">Event</a>
+  <p></p>
+  </div>
+  <p></p>
+  </div>
+</div>
+
+
+<div class="w3-col w3-center w3-container m6 l3">
+<div class="w3-card-2 w3-white">
+  <!--img class="event" src="laneigeLogo.jpg" alt="Laneige"-->
+  <div class="w3-container">
+  <h3>Klairs</h3>
+  <a href="http://www.klairs.com/shop/big_section.php?cno1=1019" target="_blank" class="w3-bar-item w3-button w3-teal">Event</a>
+  <p></p>
+  </div>
+  <p></p>
+  </div>
+</div>
+
+
+<div class="w3-col w3-center w3-container m6 l3">
+<div class="w3-card-2 w3-white">
+  <!--img class="event" src="laneigeLogo.jpg" alt="Laneige"-->
+  <div class="w3-container">
+  <h3>Tony Moly</h3>
+  <a href="http://www.etonymoly.com/html/event/event_list.asp?board=event&board_group=1" target="_blank" class="w3-bar-item w3-button w3-teal">Event</a>
+  <p></p>
+  </div>
+  <p></p>
+  </div>
+</div>
+
+
+<div class="w3-col w3-center w3-container m6 l3">
+<div class="w3-card-2 w3-white">
+  <!--img class="event" src="laneigeLogo.jpg" alt="Laneige"-->
+  <div class="w3-container">
+  <h3>Espoir</h3>
+  <a href="http://www.espoir.com/do/event.do?method=list" target="_blank" class="w3-bar-item w3-button w3-teal">Event</a>
+  <p></p>
+  </div>
+  <p></p>
+  </div>
+</div>
+
+
+<div class="w3-col w3-center w3-container m6 l3">
+<div class="w3-card-2 w3-white">
+  <!--img class="event" src="laneigeLogo.jpg" alt="Laneige"-->
+  <div class="w3-container">
+  <h3>Holika Holika</h3>
+  <a href="http://www.holikaholika.co.kr/FrontStore/PointBBS/iBoardList.phtml?bbsid=pbbs_event" target="_blank" class="w3-bar-item w3-button w3-teal">Event</a>
+  <p></p>
+  </div>
+  <p></p>
+  </div>
+</div>
+
+<div class="w3-col w3-center w3-container m6 l3">
+<div class="w3-card-2 w3-white">
+  <!--img class="event" src="laneigeLogo.jpg" alt="Laneige"-->
+  <div class="w3-container">
+  <h3>Secret Key</h3>
+  <a href="http://www.secretkey.co.kr/board/board.html?code=zenpia0_image8" target="_blank" class="w3-bar-item w3-button w3-teal">Event</a>
+  <p></p>
+  </div>
+  <p></p>
+  </div>
+</div>
+
+<div class="w3-col w3-center w3-container m6 l3">
+<div class="w3-card-2 w3-white">
+  <!--img class="event" src="laneigeLogo.jpg" alt="Laneige"-->
+  <div class="w3-container">
+  <h3>Peripera</h3>
+  <a href="http://www.periperacosmetic.com/ko/event/ing_list.asp" target="_blank" class="w3-bar-item w3-button w3-teal">Event</a>
+  <p></p>
+  </div>
+  <p></p>
+  </div>
+</div>
+
+<div class="w3-col w3-center w3-container m6 l3">
+<div class="w3-card-2 w3-white">
+  <!--img class="event" src="laneigeLogo.jpg" alt="Laneige"-->
+  <div class="w3-container">
+  <h3>G9Skin</h3>
+  <a href="http://www.g9skin.com/board/board.html?code=g9skin_image2" target="_blank" class="w3-bar-item w3-button w3-teal">Event</a>
+  <p></p>
+  </div>
+  <p></p>
+  </div>
+</div>
+
+<div class="w3-col w3-center w3-container m6 l3">
+<div class="w3-card-2 w3-white">
+  <!--img class="event" src="laneigeLogo.jpg" alt="Laneige"-->
+  <div class="w3-container">
+  <h3>Touch in Sol</h3>
+  <a href="http://touchinsol.com/board/event/list.html?board_no=8" target="_blank" class="w3-bar-item w3-button w3-teal">Event</a>
+  <p></p>
+  </div>
+  <p></p>
+  </div>
+</div>
+
+<div class="w3-col w3-center w3-container m6 l3">
+<div class="w3-card-2 w3-white">
+  <!--img class="event" src="laneigeLogo.jpg" alt="Laneige"-->
+  <div class="w3-container">
+  <h3>Mizon</h3>
+  <a href="http://www.mizon.co.kr/Event/" target="_blank" class="w3-bar-item w3-button w3-teal">Event</a>
+  <p></p>
+  </div>
+  <p></p>
+  </div>
+</div>
+
+</div>
+
+<!-- Change the number of events displayed for large, medium and small-->
+<!-- Container "Xem thêm"-->
+<div class="w3-container" style="position:relative" title="Xem thêm các event khác">
+  <a onclick="w3_open()" class="w3-button w3-large w3-black"
+  style="position:absolute;top:-60px;right:24px">Xem thêm event +</a>
+</div>
+
+
+
+<!-- Sản phẩm khác (#others) Row -->
+<div class="w3-row-padding w3-center w3-padding-64" id="others">
+    <h2>Sản phẩm khác</h2>
+    <div class="w3-col w3-third w3-margin-bottom w3-margin-top m12 l4">
+      <ul class="w3-ul w3-border w3-hover-shadow">
+        <li class="w3-theme">
+          <p class="w3-xlarge">Sâm Nonghyup</p>
+        </li>
+        <li class="w3-padding-16"><b>Các sản phẩm hồng sâm, cao sâm 
+		chính hãng từ Kangwon Insam, Hansamin.</b></li>
+        <li class="w3-padding-16"><p>Công dụng: Kích thích hoạt động của não, 
+		    giảm căng thẳng, stress, điều hòa huyết áp và tim mạch, 
+			phòng chống bệnh tiểu đường, tăng sức đề kháng và phục hồi 
+			thể trạng cho cơ thể, chống lão hóa và làm đẹp.<br>
+		  </p>
+		</li>
+        <li class="w3-padding-16">
+          <p class="w3-opacity">Vui lòng liên hệ để biết thêm thông tin chi tiết về giá và sản phẩm</p>
+        </li>
+        <li class="w3-theme-l5 w3-padding-24">
+		  <a href="#message" class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i>Liên hệ mua hàng</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="w3-col w3-third w3-margin-bottom w3-margin-top m12 l4">
+      <ul class="w3-ul w3-border w3-hover-shadow">
+        <li class="w3-theme">
+          <p class="w3-xlarge">Antiphlamine</p>
+        </li>
+        <li class="w3-padding-16"><b>Sản phẩm dầu nóng và cao dán 
+		   chính hãng từ Antiphlamine</b></li>
+        <li class="w3-padding-16"><p>Công dụng: giúp giảm đau hiệu quả, giảm đau, 
+		    nhức mỏi chân tay, bong gân, các vết thâm tím, 
+			dùng rất tốt cho các trường hợp chơi thể thao, 
+			làm việc nặng nhọc, dùng cho người già, người bị đau khớp<br>
+	
+		  </p>
+        <li class="w3-padding-16">
+          <p class="w3-opacity">Vui lòng liên hệ để biết thêm thông tin chi tiết về giá và sản phẩm</p>
+        </li>
+        <li class="w3-theme-l5 w3-padding-24">
+		  <a href="#message" class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i>Liên hệ mua hàng</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="w3-col w3-third w3-margin-bottom w3-margin-top m12 l4">
+      <ul class="w3-ul w3-border w3-hover-shadow">
+        <li class="w3-theme">
+          <p class="w3-xlarge">Sữa Hàn Quốc</p>
+        </li>
+        <li class="w3-padding-16"><b>Các sản phẩm sữa XO, Hikid, Ildong, vv chính hãng Hàn Quốc </b></li>
+        <li class="w3-padding-16"><p> Sữa XO <br>
+		    Sữa Hikid <br>
+			Sữa Nan <br>
+			Sữa Ildong, vv.<br></p>
+        <li class="w3-padding-16">
+          <p class="w3-opacity">Vui lòng liên hệ để biết thêm thông tin chi tiết về giá và sản phẩm</p>
+        </li>
+        <li class="w3-theme-l5 w3-padding-24">
+		  <a href="#message" class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i>Liên hệ mua hàng</a>
+        </li>
+      </ul>
+    </div>
+</div>
+
+<!-- Contact Container -->
+<div class="w3-container w3-padding-64 w3-margin-top w3-theme-l5" id="contact">
+  <div class="w3-row">
+    <div class="w3-col m5">
+      <div class="w3-padding-24"><span class="w3-xlarge w3-border-teal w3-bottombar" style="margin-left:10px;"> Thông tin thanh toán</span></div>
+	  <ul style="list-style-type:square">
+      <li> Ngân hàng <b>ABC</b>, chi nhánh <b>MNQ</b><br>
+	  Số tài khoản: <b>123</b><br>
+	  Chủ tài khoản: <b>xyz</b>
+	  </li><br>
+	  <li> Ngân hàng <b>ABC2</b>, chi nhánh <b>MNQ2</b><br>
+	  Số tài khoản: <b>456</b><br>
+	  Chủ tài khoản: <b>xyz2</b>
+	  </li>
+	  </ul>
+	  <div style="margin-left:10px;">
+        <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i> Seoul, Hàn Quốc</p>
+        <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>  +12 345 67890</p>
+        <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i> karashop25@gmail.com</p>
+		<p><i class="fa fa-facebook w3-text-teal w3-xlarge"></i> <a href="https://www.facebook.com/karashop25"  target="_blank"> www.facebook.com/karashop25</a></p>
+		<p><i class="fa fa-twitch w3-text-teal w3-xlarge"></i><a href="https://www.messenger.com/t/karashop25"  target="_blank"> www.messenger.com/t/karashop25</a></p>
+	  </div>
+    </div>
+	<br><br>
+    <div class="w3-col m7" id="message">
+      <form class="w3-container w3-margin-top w3-card-4 w3-padding-16 w3-white" method ="post" action="process.php" target="_blank">
+	  <h3> Mọi thắc mắc về sản phẩm/thông tin thanh toán, xin vui lòng liên hệ qua 
+	       <a href="https://www.messenger.com/t/karashop25" target="_blank">Facebook Messenger</a> hoặc gửi tin nhắn để được giải đáp.</h3>
+      <div class="w3-section">      
+        <label>Tên</label>
+        <input class="w3-input" type="text" name="Name" id="formName" placeholder="Vui lòng nhập tên/nickname tại đây..." required>
+      </div>
+      <div class="w3-section">      
+        <label>Tiêu đề</label>
+        <input class="w3-input" type="text" name="Title" id="formTitle" placeholder="Vui lòng nhập tiêu đề tại đây..." required>
+      </div>
+      <div class="w3-section">      
+        <label>Nội dung</label><br>
+        <textarea rows="3" style="width:100%;" name="Message" id="formMessage" placeholder="Vui lòng nhập nội dung câu hỏi tại đây..." required></textarea>
+      </div>  
+      <div class="w3-section">      
+        <label>Nhận câu trả lời qua</label>
+        <input class="w3-input" type="text" name="UserID" id="formUser" placeholder="Vui lòng nhập ID Messenger, Skype, Zalo, vv" required>
+      </div>  
+      <button type="submit" class="w3-button w3-right w3-theme">Gửi</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Google Maps -->
+<div class="w3-container w3-padding-64 w3-center w3-margin-bottom" id="address">
+    <h2>Liên hệ</h2>
+<iframe width="95%" height="450" frameborder="0" style="border:0" 
+src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJW8htBX6ffDURvQ3XOLwcxJI&key=AIzaSyCXdj_cPhMGoecGzBeOhO-_LHpFolUjeeA" 
+allowfullscreen></iframe>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-theme-d2 w3-center">
+  <h4>Để nhận thông tin khuyến mãi mới nhất, vui lòng cập nhật qua website hoặc 
+  <a href="https://www.facebook.com/Karas-Shop-1923399674585266/" 
+     target="_blank" title="Facebook">Facebook.</a></h4>
+  <p>Copyright 2017 <a href="#">Kara's Shop</a>. All rights reserved.</p>
+
+  <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
+    <span class="w3-text w3-padding w3-teal w3-hide-medium w3-hide-small">Trở về đầu trang</span>   
+    <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+</footer>
+
+<script>
+
+// Script for side navigation
+function w3_open() {
+    var x = document.getElementById("mySidebar");
+    x.style.width = "200px";
+    x.style.paddingTop = "5%";
+    x.style.display = "block";
+}
+
+// Close side navigation
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+<script>
+// Google Translate
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'vi', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'translate');
+}
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
